@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 export default async function reviews({
     params,
 } :{
@@ -5,6 +7,10 @@ export default async function reviews({
 }) {
     const productID= (await params).productID;
     const reviewID= (await params).reviewID;
+
+    if(parseInt(reviewID)>1000){
+        notFound();  //this will show the custom notfound page we created in this directory (app/products/[productID]/reviews/[reviewID]/not-found.tsx) instead of the default notfound page (app/not-found.tsx)
+    }
 
     return <h1> Review {reviewID} for product {productID}</h1>
 
