@@ -27,7 +27,42 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        
+      <header style={{
+        backdropFilter: "blur(10px)",
+        backgroundColor: "rgba(255, 255, 255, 0.8)",
+        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+        textAlign: "center",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "90px"
+      }} >
+        <p>Header</p>
+      </header> 
+      
+
+      <main className="flex-1">
+        {children}
+      </main>
+
+
+      <footer style={{
+        backdropFilter: "blur(10px)",
+        backgroundColor: "rgba(255, 255, 255, 0.8)",
+        boxShadow: "0 -2px 4px rgba(0, 0, 0, 0.1)",
+        textAlign: "center",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "90px"
+      }}>
+        <p>Footer</p>
+
+      </footer>
+      
+      </body>
     </html>
   );
 }
