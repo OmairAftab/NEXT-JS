@@ -9,6 +9,10 @@ export default function products(){
            <Link href="/products/3" replace>   <li className="text-blue-400 underline"> Product 3</li></Link>
                             {/* replace above acts like when we click the back button after being directed to product3 page, it will not come back to  the products page rather it will move to the home page */}
         </ul>
+
+        <Link href="/articles/breaking-news-1?lang=en">Read in English</Link>
+        <Link href="/articles/breaking-news-2?lang=fr">Read in French</Link>
+
     </>
 
     )

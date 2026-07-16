@@ -13,6 +13,12 @@ export default function Home() {
     <br />
 
     <Link href="products" className="underline text-blue-500 text-3xl">Products</Link>
+<br />
+    <br />
+     <Link href="/articles/breaking-news-1?lang=en" className="underline text-blue-500">Read in English</Link>
+    <br />
+    <br /> 
+      <Link href="/articles/breaking-news-2?lang=fr" className="underline text-blue-500">Read in French</Link>
 
     </>
   );
