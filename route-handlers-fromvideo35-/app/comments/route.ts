@@ -1,7 +1,15 @@
+import { NextRequest } from "next/server";
 import { comments } from "./data";
 
-export async function GET(){
-    return Response.json(comments);
+export async function GET( request: NextRequest, ){
+    const searchQuery= request.nextUrl.searchParams;  //sab queryparamters jo ? k aage likhe hote
+    const query=searchQuery.get("query")               //query k aage jo likha wo get kre ga mean 
+                                                      // if comments?query=first 
+
+    //if query exists so bs wo wale comments le k aao jin main wo word aata ho mean if comments?query=first   so jo aik comment hai {id:1,   text: "This is the first comment,"}  sirf wo show hoga
+    const filteredcomments= query ? comments.filter((comment)=>comment.text.includes(query)) : comments
+   
+    return Response.json(filteredcomments);
 }
 
 
