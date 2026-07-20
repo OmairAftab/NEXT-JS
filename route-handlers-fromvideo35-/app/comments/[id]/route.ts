@@ -31,3 +31,21 @@ export async function PATCH(request: Request, {params}: {params: Promise<{id: st
 
     return Response.json(comments[commentIndex]);
 }
+
+
+
+export async function DELETE(request: Request, {params}: {params: Promise<{id: string}>}){
+
+
+    const {id}=await params;
+    const commentIndex=comments.findIndex((c)=>c.id===parseInt(id));
+
+    const comment=comments[commentIndex]; //storing it now to return it in resonse
+
+    comments.splice(commentIndex, 1); // start at index "commentIndex", remove 1 item
+
+    return Response.json({
+        message: "Deleted comment: ",comment
+    });
+
+}
