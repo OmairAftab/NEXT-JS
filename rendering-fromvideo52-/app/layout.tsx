@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "./components/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +28,17 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      
+
+      {/* Themeprovider was imported from components/theme-provider and now we have wrapped it around body
+       because the layout file is a server component and themeprovider is a client component
+        and we cant directly use client components in server components*/}
+        
+      <ThemeProvider>  
+
+        <body className="min-h-full flex flex-col">{children}</body>
+
+      </ThemeProvider>
     </html>
   );
 }
