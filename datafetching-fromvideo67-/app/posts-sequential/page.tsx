@@ -42,4 +42,4 @@ export default async function PostsSequentialPage() {
 
 //in this tutorial 70- we did sequential data fetching
 //First the data of posts is fetched and then the data of author is fetched for each post. 
-// This is sequential data fetching 
+// This is sequential data fetching .. request are dependdent on each other. and takes more time to load the page.
