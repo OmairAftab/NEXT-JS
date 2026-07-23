@@ -1,6 +1,6 @@
-import { clerkMiddleware,  createRouteMatcher } from '@clerk/nextjs/server'
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 
-const isProtectedRoute=createRouteMatcher(["/user-profile"])        //user-profile route is protected route, user must be signed in to access this route
+const isProtectedRoute = createRouteMatcher(["/user-profile"])        //user-profile route is protected route, user must be signed in to access this route
 
 export default clerkMiddleware(async (auth,req)=>{
     if(isProtectedRoute(req))  {        //if request is for protected route, then check if user is signed in or not
