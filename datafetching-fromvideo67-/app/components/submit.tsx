@@ -4,7 +4,8 @@ import {useFormStatus} from "react-dom"
 
 export const Submit=()=>{
 
-    const {pending}=useFormStatus();
+    const {pending}=useFormStatus();   ////ye hook hume form ki status ke bare main btata hai ki form submit ho rha hai ya ni. ye hook sirf client component main use hota hai. and ye react-dom se import hota hai
+    // const {pending, data, method, action}=useFormStatus();  
 
     return (
         <button className="bg-blue-500 text-white px-4 py-2 rounded disabled:bg-gray-500"
